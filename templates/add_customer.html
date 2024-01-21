@@ -3,10 +3,14 @@
 {% block content %}
 
     <br><br>
-    <h1 class="text-capitalize text-center mx-10 bg-dark text-white">
-        Registration for a new customer
-    </h1>
-
+    <div class="card text-center">
+        <div class="card-body">
+            <h1 class="text-capitalize mx-10 text-white">
+                Registration for a new customer
+            </h1>
+        </div>
+    </div>
+    
     <br> <br>
     <form method="post">
         {% csrf_token %}
@@ -32,7 +36,7 @@
         <div class="row">
             <div class="col-md-6">
                 <label for="sex" class="form-label">Sex</label>
-                <select name="sex" class="form-control" class="form-select" required id="sex">
+                <select name="sex" class="form-select" required id="sex">
                     <option selected>Choose the gender</option>
                     <option value="M">Man</option>
                     <option value="W">Woman</option>
@@ -41,7 +45,7 @@
 
             <div class="col-md-4">
                 <label for="age" class="form-label">Age</label>
-                <select name="age" class="form-control" class="form-select" required id="age">
+                <select name="age" class="form-select" required id="age">
                     <option selected>Choose the age range</option>
                     <option value="5-10">5-10</option>
                     <option value="10-15">10-15</option>

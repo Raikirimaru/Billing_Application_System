@@ -1,11 +1,16 @@
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font: 400 .875rem 'Open Sans', sans-serif;
     color: #bcd0f7;
     background: #1A233A;
     position: relative;
     height: 100%;
+    overflow: scroll;
 }
 
 footer {
@@ -17,6 +22,7 @@ footer {
     width: 100%;
     text-align: center;
 }
+
 
 .invoice-container {
     padding: 1rem;

@@ -36,9 +36,9 @@ class Invoice(models.Model):
         models (Invoice): Invoice model definition
     """
     INVOICE_TYPE = (
-        ('R', 'Reçu'),
-        ('P', 'Proforma facture'),
-        ('F', 'Facture'),
+        ('R', 'RECIEPT'),
+        ('P', 'PROFORMA INVOICE'),
+        ('I', 'INVOICE'),
     )
     customer = models.ForeignKey(Customer, on_delete=models.PROTECT)
     save_by = models.ForeignKey(User, on_delete=models.PROTECT)
@@ -60,6 +60,7 @@ class Invoice(models.Model):
     def get_total_amount(self):
         articles = self.article_set.all()
         total = sum(article.get_total for article in articles)
+        return total
 
 class Article(models.Model):
     """_Summary_
@@ -79,6 +80,6 @@ class Article(models.Model):
     
     @property
     def get_total(self):
-        total = self.quantity * self.unit_price
-        return self.name
+        total = self.quantity * self.unit_price   
+        return total
     
