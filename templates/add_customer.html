@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <br><br>
+    <h1 class="text-capitalize text-center mx-10 bg-dark text-white">
+        Registration for a new customer
+    </h1>
+
+    <br> <br>
+    <form method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <label for="name" class="form-label">Name</label>
+                <input name="name" required type="text" class="form-control" id="name" placeholder="lastname and firstname">
+            </div>
+
+            <div class="col-md-4">
+                <label for="email" class="form-label">Email</label>
+                <input name="email" required type="email" class="form-control" id="email" placeholder="E-mail">
+            </div>
+
+            <div class="col-md-2">
+                <label for="tel" class="form-label">Phone</label>
+                <input name="phone" required type="number" class="form-control" id="tel" placeholder="Phone">
+            </div>
+        </div>
+
+        <br> <br>
+
+        <div class="row">
+            <div class="col-md-6">
+                <label for="sex" class="form-label">Sex</label>
+                <select name="sex" class="form-control" class="form-select" required id="sex">
+                    <option selected>Choose the gender</option>
+                    <option value="M">Man</option>
+                    <option value="W">Woman</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="age" class="form-label">Age</label>
+                <select name="age" class="form-control" class="form-select" required id="age">
+                    <option selected>Choose the age range</option>
+                    <option value="5-10">5-10</option>
+                    <option value="10-15">10-15</option>
+                    <option value="15-20">15-20</option>
+                    <option value="20-30">20-30</option>
+                    <option value="30-40">30-40</option>
+                    <option value="40-50">40-50</option>
+                    <option value="50-70">50-70</option>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <label for="zip" class="form-label">Zip Code</label>
+                <input name="zip" required type="text" class="form-control" id="zip" placeholder="Zip Code">
+            </div>
+        </div>
+
+        <br> <br>
+
+        <div class="row">
+            <div class="col-md-6">
+                <label for="address" class="form-label">Address</label>
+                <input name="address" required type="text" class="form-control" id="address" placeholder="Address">
+            </div>
+            <div class="col-md-6">
+                <label for="city" class="form-label">City</label>
+                <input name="city" required type="text" class="form-control" id="city" placeholder="City">
+            </div>
+        </div>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+{% endblock content %}

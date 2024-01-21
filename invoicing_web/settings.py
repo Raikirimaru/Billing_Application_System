@@ -18,6 +18,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
+try:
+    from django.contrib.messages import constants as messages
+    
+    MESSAGE_TAGS = {
+        messages.DEBUG: 'alert-debug',
+        messages.ERROR: 'alert-danger',
+        messages.WARNING: 'alert-warning',
+        messages.INFO: 'alert-primary',
+        messages.SUCCESS: 'alert-success',
+    }
+    
+except Exception as e:
+    pass
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -39,7 +53,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'invoicing'
+    'invoicing',
+    'django_bootstrap_icons'
 ]
 
 MIDDLEWARE = [

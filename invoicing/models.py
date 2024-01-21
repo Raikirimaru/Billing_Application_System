@@ -16,7 +16,7 @@ class Customer(models.Model):
     phone = models.CharField(max_length=14)
     address = models.CharField(max_length=60)
     sexe = models.CharField(max_length=1, choices=SEX_TYPE)
-    age = models.IntegerField()
+    age = models.CharField(max_length=12)
     city = models.CharField(max_length=35)
     zip_code = models.CharField(max_length=16)
     created_at = models.DateTimeField(auto_now_add=True)
